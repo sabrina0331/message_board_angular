@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<div id="header"style="text-align:left">
+  <h3>
+    The Dojo Message Board
+  </h3>
+</div>
+<div id="createMsg">
+  <form (submit)="createMessage()">
+  Name: <input type="text" name="newMsg.poster" [(ngModel)]="newMsg.poster"/><br>
+  Message:<br><textarea type="text" name="newMsg.post" rows="4px" cols="80px;" [(ngModel)]="newMsg.post"></textarea><br>
+  <button id="createB" type="submit">Post message</button>
+  </form>
+</div>
+<div id="showAllMsg">
+  <div *ngFor="let msg of messages">
+    <p>Name: {{ msg.poster }}</p>
+    <p>Message: {{ msg.post }}</p>
+    
+    <div id="showComment" *ngFor="let com of msg.commentCreater" >
+      <p>Name: {{ com.commentCreater }}</p>
+      <p>Comment: {{ com.comment }}</p>
+    </div>
+
+    <div id="createCom">
+      <form #commentform='ngForm' (submit)="createComment(msg['_id'],commentform)">
+        <p>Name:</p><input type="text" name="commentCreater" [(ngModel)]="msg.commentCreater"><br>
+        <p>Comment:</p><textarea type="text" name="comment" rows="2px" cols="60px" [(ngModel)]="msg.comment"></textarea><br>
+        <button id="commentB" type="submit">Post comment</button>
+      </form>
+    </div>
+
+  </div>
+  
+</div>
+<!-- <div>
+    <flash-messages></flash-messages>
+</div> -->
+
+<router-outlet></router-outlet>

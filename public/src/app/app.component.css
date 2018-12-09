@@ -1,0 +1,39 @@
+#header{
+    border-bottom: 3px solid skyblue;
+    width: 60%;
+    margin: 10px 30px;
+}
+#createMsg{
+    margin-left: 30px;
+}
+#createB{
+    margin-left:500px;
+    background-color: skyblue;
+}
+
+#showAllMsg {
+    margin-left: 40px;
+}
+p{
+    color: seagreen;
+}
+#createCom {
+    margin-left:40px;
+    font-size: 10px;
+}
+
+#createCom p{
+    font-size: 15px;
+    color: crimson;
+}
+
+#commentB{
+    margin-left: 200px;
+    background-color: aqua;
+}
+#showComment{
+    margin-left: 60px;
+}
+#showComment p{
+    color: slateblue;
+}
