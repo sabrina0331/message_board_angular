@@ -2,11 +2,11 @@ const express = require('express');
 const app = express();
 const bp = require('body-parser');
 const path = require('path');
-const flash = require('express-flash');
+// const flash = require('express-flash');
 
 app.use(bp.json());
 app.use(express.static( __dirname + '/public/dist/public'));
-app.use(flash());
+// app.use(flash());
 
 require("./routes")(app)
 

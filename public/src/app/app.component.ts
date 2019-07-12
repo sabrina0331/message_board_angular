@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from './http.service';
+
 import { ValidateService } from '../app/services/validate.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
 
@@ -15,17 +16,18 @@ export class AppComponent {
   newMsg: any;
   commentCreater: any;
   message: any=[];
+
   
 
 constructor(private _httpService: HttpService, private validateService: ValidateService){
- 
+
  //private flashMessage: FlashMessagesService
-  this.showAllMsgs()
+  
 }
 
 ngOnInit(){
   this.newMsg = {poster:"", post:""}
-
+  this.showAllMsgs()
 }
 
 showAllMsgs(){
@@ -40,12 +42,12 @@ createMessage(){
   let addMsg = this._httpService.addMessage(this.newMsg)
   addMsg.subscribe(data=>{
     this.newMsg = {poster:"", post:""}
-    if(!this.validateService.validateMessage(addMsg)){
-      // this.flashMessage.show('Please fill in all fields',{cssClass: 'alert-danger',timeout:3000});
-      return false;
-    }
-  })
   
+    // if(!this.validateService.validateMessage(addMsg)){
+    //   // this.flashMessage.show('Please fill in all fields',{cssClass: 'alert-danger',timeout:3000});
+    //   return false;
+    // }
+  })
   this.showAllMsgs();
 }
 createComment(id,commentform){

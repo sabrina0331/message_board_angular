@@ -10,10 +10,14 @@ import { FormsModule } from '@angular/forms';
 
 import { ValidateService } from './services/validate.service';
 import { FlashMessagesModule } from 'angular2-flash-messages';
+import { HomeComponent } from './home/home.component';
+import { DeleteComponent } from './delete/delete.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    DeleteComponent
   ],
   imports: [
     BrowserModule,
